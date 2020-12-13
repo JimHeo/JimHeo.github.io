@@ -3,6 +3,55 @@
 
 
     <url>
+        <loc>https://jimheo.github.io/tags/Demian/</loc>
+        <lastmod>2020-12-11T09:52:06.986Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://jimheo.github.io/tags/Overcome/</loc>
+        <lastmod>2020-12-11T09:52:06.986Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://jimheo.github.io/tags/Burnout/</loc>
+        <lastmod>2020-12-11T09:52:06.986Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://jimheo.github.io/tags/Retrospective/</loc>
+        <lastmod>2020-12-11T09:52:06.986Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://jimheo.github.io/tags/Essay/</loc>
+        <lastmod>2020-12-11T09:52:06.986Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://jimheo.github.io/tags/Values/</loc>
+        <lastmod>2020-12-11T09:51:58.810Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://jimheo.github.io/tags/COVID19/</loc>
+        <lastmod>2020-12-11T09:51:58.810Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://jimheo.github.io/tags/Instance-Segmentation/</loc>
         <lastmod>2020-12-08T07:01:25.299Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -45,27 +94,6 @@
     </url>
 
     <url>
-        <loc>https://jimheo.github.io/tags/Overcome/</loc>
-        <lastmod>2020-12-08T07:01:25.299Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://jimheo.github.io/tags/Burnout/</loc>
-        <lastmod>2020-12-08T07:01:25.299Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://jimheo.github.io/tags/Retrospective/</loc>
-        <lastmod>2020-12-08T07:01:25.299Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://jimheo.github.io/tags/Gradient-Descent/</loc>
         <lastmod>2020-12-08T07:01:25.299Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -74,20 +102,6 @@
 
     <url>
         <loc>https://jimheo.github.io/tags/Logistic-Regression/</loc>
-        <lastmod>2020-12-08T07:01:25.299Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://jimheo.github.io/tags/Essay/</loc>
-        <lastmod>2020-12-08T07:01:25.299Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://jimheo.github.io/tags/Damian/</loc>
         <lastmod>2020-12-08T07:01:25.299Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -130,20 +144,6 @@
 
     <url>
         <loc>https://jimheo.github.io/tags/Computational-Graph/</loc>
-        <lastmod>2020-12-08T07:01:25.298Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://jimheo.github.io/tags/Values/</loc>
-        <lastmod>2020-12-08T07:01:25.298Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://jimheo.github.io/tags/COVID19/</loc>
         <lastmod>2020-12-08T07:01:25.298Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

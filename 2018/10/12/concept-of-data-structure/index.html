@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#047862">
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 4.2.1">
 <meta name="naver-site-verification" content="2bd14d67b3d73295d005329855a538d74254ba06">
 <script data-ad-client="ca-pub-3114905834142601" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/piedpiper.png">
@@ -50,14 +50,6 @@
     isPost : true,
     lang   : 'en'
   };
-</script>
-<script>
-  ((w, d) => {
-    'use strict';
-      const userScheme = localStorage.getItem('Scheme');
-      if (!userScheme) return;
-    d.documentElement.className += ' darkScheme';
-  })(window, document);
 </script>
 
   <title>Concept of Data Structure | JimintheBox</title>
@@ -348,7 +340,7 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
-<noscript>Please enable JavaScript to view the <a target="_blank" rel="external nofollow noopener noreferrer" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="external nofollow noopener noreferrer">comments powered by Disqus.</a></noscript>
 
         
     <div class="post-nav">
@@ -418,7 +410,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EB%9E%80"><span class="nav-number">1.</span> <span class="nav-text">자료구조란?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OOP%EC%99%80-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0"><span class="nav-number">1.1.</span> <span class="nav-text">OOP와 자료구조</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%ED%98%95"><span class="nav-number">1.2.</span> <span class="nav-text">대표적인 자료구조형</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#자료구조란"><span class="nav-number">1.</span> <span class="nav-text">자료구조란?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OOP와-자료구조"><span class="nav-number">1.1.</span> <span class="nav-text">OOP와 자료구조</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#대표적인-자료구조형"><span class="nav-number">1.2.</span> <span class="nav-text">대표적인 자료구조형</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -464,12 +456,6 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 
 
-<div class="night-mode motion-element">
-  <a role="button" class="night-btn">
-    <i class="fa fa-adjust"></i>
-    Dark Mode
-  </a>
-</div>
 
       </div>
 
@@ -660,25 +646,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
-<script>
-  ((w, d) => {
-    'use strict';
-      let userScheme = localStorage.getItem('Scheme');
-      if (userScheme) d.documentElement.className += ' darkScheme';
-      const btn = d.querySelector('.night-btn');
-      w.addEventListener('keydown', e => {
-        if (e.altKey && e.keyCode == 88) btn.click();
-      });
-      btn.addEventListener('click', () => {
-        d.documentElement.classList.toggle('darkScheme');
-        if ( d.documentElement.classList.contains('darkScheme') ) {
-          localStorage.setItem('Scheme', 'Dark');
-          return;
-        }
-        localStorage.removeItem('Scheme');
-      });
-  })(window, document);
-</script>
 
 <script>
   function loadCount() {

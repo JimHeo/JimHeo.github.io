@@ -2,22 +2,29 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://jimheo.github.io/</loc>
+        <loc>https://jimheo.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
-
     <url>
-        <loc>https://jimheo.github.io/2018/10/10/ml-study-week1/</loc>
-        <lastmod>2020-12-08T07:01:25.299Z</lastmod>
+        <loc>https://jimheo.github.io/2020/07/14/retrospective-to-overcome-the-burnout/</loc>
+        <lastmod>2020-12-11T09:52:06.986Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jimheo.github.io/2020/07/14/retrospective-to-overcome-the-burnout/</loc>
+        <loc>https://jimheo.github.io/2020/07/03/correlation-between-masks-and-values/</loc>
+        <lastmod>2020-12-11T09:51:58.810Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jimheo.github.io/2018/10/10/ml-study-week1/</loc>
         <lastmod>2020-12-08T07:01:25.299Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -50,14 +57,6 @@
 
     <url>
         <loc>https://jimheo.github.io/2018/10/10/concept-of-cnn/</loc>
-        <lastmod>2020-12-08T07:01:25.298Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jimheo.github.io/2020/07/03/correlation-between-masks-and-values/</loc>
         <lastmod>2020-12-08T07:01:25.298Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
