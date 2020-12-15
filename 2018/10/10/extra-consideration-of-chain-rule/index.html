@@ -51,6 +51,14 @@
     lang   : 'en'
   };
 </script>
+<script>
+  ((w, d) => {
+    'use strict';
+      const userScheme = localStorage.getItem('Scheme');
+      if (!userScheme) return;
+    d.documentElement.className += ' darkScheme';
+  })(window, document);
+</script>
 
   <title>Chain Rule에 대한 추가적인 고찰 | JimintheBox</title>
   
@@ -459,6 +467,12 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 
 
+<div class="night-mode motion-element">
+  <a role="button" class="night-btn">
+    <i class="fa fa-adjust"></i>
+    Dark Mode
+  </a>
+</div>
 
       </div>
 
@@ -704,6 +718,28 @@ if (document.querySelectorAll('pre.mermaid').length) {
     
 
   
+// <script>
+//   ((w, d) => {
+//     'use strict';
+//
+//       let userScheme = localStorage.getItem('Scheme');
+//       if (userScheme) d.documentElement.className += ' darkScheme';
+//       const btn = d.querySelector('.night-btn');
+//       w.addEventListener('keydown', e => {
+//         if (e.altKey && e.code === 'KeyX') btn.click();
+//       });
+//       btn.addEventListener('click', () => {
+//         d.documentElement.classList.toggle('darkScheme');
+//         if ( d.documentElement.classList.contains('darkScheme') ) {
+//           localStorage.setItem('Scheme', 'Dark');
+//           return;
+//         }
+//         localStorage.removeItem('Scheme');
+//       });
+//
+//
+//   })(window, document);
+// </script>
 
 <script>
   function loadCount() {
@@ -742,11 +778,9 @@ if (document.querySelectorAll('pre.mermaid').length) {
   ((w, d) => {
     'use strict';
       let userScheme = localStorage.getItem('Scheme');
-      if (userScheme) d.documentElement.className = 'darkScheme';
+      if (userScheme) d.documentElement.className += ' darkScheme';
       const btn = d.querySelector('.night-mode');
-      w.addEventListener('keydown', e => {
-        if (e.altKey && e.keyCode == 88) btn.click();
-      });
+
       btn.addEventListener('click', () => {
         d.documentElement.classList.toggle('darkScheme');
 
@@ -767,7 +801,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
         localStorage.removeItem('Scheme');
       });
   })(window, document);
-  </script>
+</script>
+
 
 
   <script id="dsq-count-scr" src="//jiminthebox.disqus.com/count.js" async></script>
