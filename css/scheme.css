@@ -1,0 +1,137 @@
+.darkScheme body {
+  background: $black-deep;
+  color: $grey-light;
+}
+.darkScheme .exturl {
+  color: $gainsboro;
+}
+.darkScheme .exturl:hover {
+  color: $link-hover-color-dark;
+  background: $black-light;
+}
+.darkScheme a {
+  color: $gainsboro;
+}
+.darkScheme a:hover {
+  color: $link-hover-color-dark;
+  border-bottom-color: $link-hover-color-dark;
+}
+.darkScheme .footer {
+  background: $black-deep;
+  color: $grey-dark;
+}
+.darkScheme .site-author-name {
+  color: $gainsboro;
+}
+.darkScheme .tag-cloud-0 {
+  border-bottom-color: #555;
+  color: #555;
+}
+.darkScheme .tag-cloud-1 {
+  border-bottom-color: #646464;
+  color: #646464;
+}
+.darkScheme .tag-cloud-2 {
+  border-bottom-color: #737373;
+  color: #737373;
+}
+.darkScheme .tag-cloud-3 {
+  border-bottom-color: #828282;
+  color: #828282;
+}
+.darkScheme .tag-cloud-4 {
+  border-bottom-color: #929292;
+  color: #929292;
+}
+.darkScheme .tag-cloud-5 {
+  border-bottom-color: #a1a1a1;
+  color: #a1a1a1;
+}
+.darkScheme .tag-cloud-6 {
+  border-bottom-color: #b0b0b0;
+  color: #b0b0b0;
+}
+.darkScheme .tag-cloud-7 {
+  border-bottom-color: #c0c0c0;
+  color: #c0c0c0;
+}
+.darkScheme .tag-cloud-8 {
+  border-bottom-color: #cfcfcf;
+  color: #cfcfcf;
+}
+.darkScheme .tag-cloud-9 {
+  border-bottom-color: #dedede;
+  color: #dedede;
+}
+.darkScheme .tag-cloud-10 {
+  border-bottom-color: #eee;
+  color: #eee;
+}
+.darkScheme .tag-cloud {
+  color: $grey-dark;
+}
+.darkScheme .header .header-inner {
+  background: $black-dim;
+}
+.darkScheme .post-block {
+  background: $black-dim;
+}
+.darkScheme .sidebar {
+  background: $black-dim;
+}
+.darkScheme .sidebar-inner {
+  background: $black-dim;
+}
+.darkScheme .post-expand {
+  color: $grey-dark;
+}
+.darkScheme .site-title {
+  color: $whitesmoke;
+}
+.darkScheme .note.info {
+  background: $gainsboro;
+}
+.darkScheme .note.info p {
+  color: #000;
+}
+.darkScheme .post-block {
+  color: $gainsboro;
+}
+.darkScheme .post-title-link {
+  color: $gainsboro;
+}
+.darkScheme .copy-btn {
+  background: #202124;
+  color: $gainsboro;
+}
+.darkScheme .post-copyright {
+  background-color: $black-light;
+}
+.darkScheme .menu .menu-item a {
+  color: $gainsboro;
+}
+.darkScheme .pagination {
+  background: $black-dim;
+}
+.darkScheme .page-number.current {
+  background: $green;
+  border-top-color: $green;
+  color: $gainsboro;
+}
+.darkScheme .menu-item-active a,
+.darkScheme .menu .menu-item a:hover,
+.darkScheme .menu .menu-item span.exturl:hover {
+  background: $black-light;
+  color: $green;
+}
+.darkScheme blockquote {
+  color: $sage-green;
+}
+.darkScheme .btn {
+  background: $green;
+  color: $gainsboro;
+}
+.darkScheme .btn:hover {
+  background: $black-dim;
+  color: $green;
+}

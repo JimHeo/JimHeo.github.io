@@ -1,0 +1,43 @@
+.night-mode {
+  margin-top: 10px;
+  text-align: center;
+}
+.night-mode a {
+  display: inline-block;
+  padding: 0 15px;
+  color: #fc6423;
+  border: 1px solid #fc6423 !important;
+  border-radius: 4px;
+}
+.night-mode a i {
+  color: #fc6423;
+}
+.night-mode a:hover {
+  color: $whitesmoke;
+  background: #fc6423;
+}
+.night-mode a:hover i {
+  color: $whitesmoke;
+}
+.darkScheme .night-mode {
+  margin-top: 10px;
+  text-align: center;
+}
+.darkScheme .night-mode a {
+  display: inline-block;
+  padding: 0 15px;
+  color: $whitesmoke;
+  background: #fc6423;
+  border: 1px solid #fc6423 !important;
+  border-radius: 4px;
+}
+.darkScheme .night-mode a i {
+  color: $whitesmoke;
+}
+.darkScheme .night-mode a:hover {
+  color: #fc6423;
+  background: $black-dim;
+}
+.darkScheme .night-mode a:hover i {
+  color: #fc6423;
+}
