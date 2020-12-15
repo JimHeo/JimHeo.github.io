@@ -24,24 +24,8 @@
     </url>
 
     <url>
-        <loc>https://jimheo.github.io/2018/10/10/ml-study-week1/</loc>
-        <lastmod>2020-12-08T07:01:25.299Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://jimheo.github.io/2019/03/12/segmentation-neuralnet-listup/</loc>
-        <lastmod>2020-12-08T07:01:25.299Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jimheo.github.io/2018/10/12/about-heap/</loc>
-        <lastmod>2020-12-08T07:01:25.298Z</lastmod>
+        <lastmod>2020-12-11T09:48:00.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -49,15 +33,15 @@
 
     <url>
         <loc>https://jimheo.github.io/2018/10/12/concept-of-data-structure/</loc>
-        <lastmod>2020-12-08T07:01:25.298Z</lastmod>
+        <lastmod>2020-12-11T09:48:00.332Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jimheo.github.io/2018/10/10/concept-of-cnn/</loc>
-        <lastmod>2020-12-08T07:01:25.298Z</lastmod>
+        <loc>https://jimheo.github.io/2018/10/10/ml-study-week1/</loc>
+        <lastmod>2020-12-11T09:48:00.332Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -65,7 +49,23 @@
 
     <url>
         <loc>https://jimheo.github.io/2018/10/10/extra-consideration-of-chain-rule/</loc>
-        <lastmod>2020-12-08T07:01:25.298Z</lastmod>
+        <lastmod>2020-12-11T09:48:00.332Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jimheo.github.io/2018/10/10/concept-of-cnn/</loc>
+        <lastmod>2020-12-11T09:48:00.332Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jimheo.github.io/2018/10/12/about-heap/</loc>
+        <lastmod>2020-12-11T09:48:00.331Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
