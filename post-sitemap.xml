@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://jimheo.github.io/2021/07/06/global-interpreter-lock/</loc>
+        <lastmod>2021-07-06T15:32:11.108Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://jimheo.github.io/2018/10/12/about-heap/</loc>
         <lastmod>2020-12-23T09:28:29.738Z</lastmod>
         <changefreq>weekly</changefreq>

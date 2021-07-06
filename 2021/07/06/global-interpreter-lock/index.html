@@ -23,33 +23,28 @@
     var CONFIG = {"hostname":"jimheo.github.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#047862","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Complete Binary TreeTree에 대한 기본적인 설명은 루비콘 팀 Martin Kim의 포스트를 참조한다. &amp;#x1f647; Ref: https:&#x2F;&#x2F;blog.martinwork.co.kr&#x2F;theory&#x2F;2018&#x2F;09&#x2F;22&#x2F;what-is-tree.html추가적으로 Tree에 대해 부가설명을 덧붙인다.Tree의 정의는 다음 2가지를 따른다.    1">
+  <meta name="description" content="들어가며딥러닝을 입문하며 자연스럽게 파이썬을 함께 공부하게 되었고, 지금은 주 언어로 사용하고 있다. 하지만 나는 파이썬에 대해 얼마나 알고 있을까? C&#x2F;C++ 같은 컴파일 언어만 사용했던 나에게 파이썬은 꽤 난해하게 다가왔다. 사실, 파이썬을 사용하면서 느낀 생각은 “파이썬의 철학(The Zen of Python)과 많이 다른데..?” 였다. 파이썬 철학">
 <meta property="og:type" content="article">
-<meta property="og:title" content="자료구조, 힙(Heap)">
-<meta property="og:url" content="https://jimheo.github.io/2018/10/12/about-heap/index.html">
+<meta property="og:title" content="Python GIL(Global Interpreter Lock)이 뭐에요?">
+<meta property="og:url" content="https://jimheo.github.io/2021/07/06/global-interpreter-lock/index.html">
 <meta property="og:site_name" content="JimintheBox">
-<meta property="og:description" content="Complete Binary TreeTree에 대한 기본적인 설명은 루비콘 팀 Martin Kim의 포스트를 참조한다. &amp;#x1f647; Ref: https:&#x2F;&#x2F;blog.martinwork.co.kr&#x2F;theory&#x2F;2018&#x2F;09&#x2F;22&#x2F;what-is-tree.html추가적으로 Tree에 대해 부가설명을 덧붙인다.Tree의 정의는 다음 2가지를 따른다.    1">
+<meta property="og:description" content="들어가며딥러닝을 입문하며 자연스럽게 파이썬을 함께 공부하게 되었고, 지금은 주 언어로 사용하고 있다. 하지만 나는 파이썬에 대해 얼마나 알고 있을까? C&#x2F;C++ 같은 컴파일 언어만 사용했던 나에게 파이썬은 꽤 난해하게 다가왔다. 사실, 파이썬을 사용하면서 느낀 생각은 “파이썬의 철학(The Zen of Python)과 많이 다른데..?” 였다. 파이썬 철학">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jimheo.github.io/images/about-heap/treearray.png">
-<meta property="og:image" content="https://jimheo.github.io/images/about-heap/insert1.jpg">
-<meta property="og:image" content="https://jimheo.github.io/images/about-heap/insert2.jpg">
-<meta property="og:image" content="https://jimheo.github.io/images/about-heap/insert3.jpg">
-<meta property="og:image" content="https://jimheo.github.io/images/about-heap/insert4.jpg">
-<meta property="og:image" content="https://jimheo.github.io/images/about-heap/insert4.jpg">
-<meta property="og:image" content="https://jimheo.github.io/images/about-heap/delete1.jpg">
-<meta property="og:image" content="https://jimheo.github.io/images/about-heap/delete2.jpg">
-<meta property="og:image" content="https://jimheo.github.io/images/about-heap/delete3.jpg">
-<meta property="og:image" content="https://jimheo.github.io/images/about-heap/delete4.jpg">
-<meta property="article:published_time" content="2018-10-12T08:10:13.000Z">
-<meta property="article:modified_time" content="2020-12-23T09:28:29.738Z">
+<meta property="og:image" content="https://imgs.xkcd.com/comics/python.png">
+<meta property="og:image" content="https://i.pinimg.com/564x/cf/3d/9a/cf3d9a67a7cb5781a15693e24bf92227.jpg">
+<meta property="og:image" content="https://preview.redd.it/r2zt0z71yfu31.png?width=640&crop=smart&auto=webp&s=446a79718041098ad4031d8981f0e7e093e5b595">
+<meta property="og:image" content="https://cds.cern.ch/record/2721971/files/Tobecontinued_2_image.jpg?subformat=icon">
+<meta property="article:published_time" content="2021-07-06T04:57:09.000Z">
+<meta property="article:modified_time" content="2021-07-06T15:32:11.108Z">
 <meta property="article:author" content="Jim &#x2F; Demian">
-<meta property="article:tag" content="Data Structure">
-<meta property="article:tag" content="Heap">
-<meta property="article:tag" content="Tree">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="GIL">
+<meta property="article:tag" content="Mutex">
+<meta property="article:tag" content="Threading">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jimheo.github.io/images/about-heap/treearray.png">
+<meta name="twitter:image" content="https://imgs.xkcd.com/comics/python.png">
 
-<link rel="canonical" href="https://jimheo.github.io/2018/10/12/about-heap/">
+<link rel="canonical" href="https://jimheo.github.io/2021/07/06/global-interpreter-lock/">
 
 
 <script id="page-configurations">
@@ -70,7 +65,7 @@
   })(window, document);
 </script>
 
-  <title>자료구조, 힙(Heap) | JimintheBox</title>
+  <title>Python GIL(Global Interpreter Lock)이 뭐에요? | JimintheBox</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127400890-1"></script>
     <script data-pjax>
@@ -216,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://jimheo.github.io/2018/10/12/about-heap/">
+    <link itemprop="mainEntityOfPage" href="https://jimheo.github.io/2021/07/06/global-interpreter-lock/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/jim_zepeto.jpeg">
@@ -229,7 +224,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          자료구조, 힙(Heap)
+          Python GIL(Global Interpreter Lock)이 뭐에요?
         </h1>
 
         <div class="post-meta">
@@ -239,7 +234,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-10-12 17:10:13" itemprop="dateCreated datePublished" datetime="2018-10-12T17:10:13+09:00">2018-10-12</time>
+              <time title="Created: 2021-07-06 13:57:09" itemprop="dateCreated datePublished" datetime="2021-07-06T13:57:09+09:00">2021-07-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,8 +255,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2018/10/12/about-heap/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10/12/about-heap/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/07/06/global-interpreter-lock/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/06/global-interpreter-lock/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -271,7 +266,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>3.5k</span>
+              <span>2.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -290,39 +285,54 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="Complete-Binary-Tree"><a href="#Complete-Binary-Tree" class="headerlink" title="Complete Binary Tree"></a>Complete Binary Tree</h4><p>Tree에 대한 기본적인 설명은 루비콘 팀 Martin Kim의 포스트를 참조한다. <span class="github-emoji" alias="bow" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f647.png?v8">&#x1f647;</span></p>
-<h5 id="Ref-https-blog-martinwork-co-kr-theory-2018-09-22-what-is-tree-html"><a href="#Ref-https-blog-martinwork-co-kr-theory-2018-09-22-what-is-tree-html" class="headerlink" title="Ref: https://blog.martinwork.co.kr/theory/2018/09/22/what-is-tree.html"></a>Ref: <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hcnRpbndvcmsuY28ua3IvdGhlb3J5LzIwMTgvMDkvMjIvd2hhdC1pcy10cmVlLmh0bWw=">https://blog.martinwork.co.kr/theory/2018/09/22/what-is-tree.html<i class="fa fa-external-link-alt"></i></span></h5><p>추가적으로 Tree에 대해 부가설명을 덧붙인다.<br>Tree의 정의는 다음 2가지를 따른다.</p>
-<br>
-
-<blockquote>
-<p><strong>1. A root node</strong></p>
-<p><strong>2. The remaining nodes are partitioned into $n(n \geq 0)$ disjoint sets $T_1, T_2, … , T_n$ ($T_i$ : subtrees of the root)</strong></p>
-</blockquote>
-<br>
-
-<p>즉, 루트 노드가 존재하며, 0개 이상의 서브트리로 분리된 노드가 존재해야 한다.<br>이 중 Full Binary Tree는 Depth가 $k$일 때, 총 노드의 개수는 $2^k - 1$개인 트리이며,<br>Complete Binary Tree는 Depth가 $k$인 Full Binary Tree를 왼쪽에서부터 순차적으로 읽었을 때, $k-level$에서 Complete Binary Tree의 총 노드 수 $n$의 인덱스를 가진 노드가 존재하는 것을 말한다.<br>이 때, $k =\lceil\log_{2}(n + 1)\rceil$이 성립한다.<br>Complete Binary Tree는 마지막 레벨을 제외하고 모든 레벨이 채워져 있으며, 마지막 레벨의 모든 노드는 가능한 한 가장 왼쪽에 있기 때문에 공간의 낭비가 없어 배열로 구현하는 것이 효율적이다.</p>
+        <h4 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h4><p>딥러닝을 입문하며 자연스럽게 파이썬을 함께 공부하게 되었고, 지금은 주 언어로 사용하고 있다. 하지만 나는 파이썬에 대해 얼마나 알고 있을까?</p>
+<p>C/C++ 같은 컴파일 언어만 사용했던 나에게 파이썬은 꽤 난해하게 다가왔다. 사실, 파이썬을 사용하면서 느낀 생각은 “파이썬의 철학(The Zen of Python)과 많이 다른데..?” 였다. 파이썬 철학의 핵심 내용은 <code>명확한 그리고 가급적이면 유일한 하나의 방법이 존재한다(There should be one-- and preferably only one --obvious way to do it)</code>이며, 이에 따르면 규칙이 굉장히 엄격한 언어라고 한다. 그렇지만 나에게 파이썬의 처음에는 굉장히 자유로운 언어로 보였다.</p>
 <a id="more"></a>
 
-<p><img src="/images/about-heap/treearray.png" alt="TREEARRAY"></p>
-<p>배열로 구현 시, $i$번째 노드의 자식 노드는 각각 $2i,\ 2i + 1$이 되며, 부모 노드는 존재 시 $\lfloor i / 2\rfloor$가 된다. (부모 노드의 인덱스가 $0$부터 시작할 경우에는 자식은  $2i + 1,\ 2i + 2$, 부모는 $\lfloor(i - 1) / 2\rfloor$가 된다.)</p>
-<h4 id="Heap의-정의와-연산"><a href="#Heap의-정의와-연산" class="headerlink" title="Heap의 정의와 연산"></a>Heap의 정의와 연산</h4><p>사전적 의미에서 Heap은 <code>무엇인가를 차곡차곡 쌓아올린 더미</code>를 뜻한다.<br>Heap은 메모리에서 동적할당을 받을 때, 정렬을 할 때, 그리고 우선순위 큐(Priority Queue)나 무손실 압축 알고리즘인 허프만 코드 등에 다양하게 사용된다.<br>위에서 Tree를 설명한 이유는 Heap은 Tree 구조 중 Complete Binary Tree에서 몇가지 Constraint를 더하여 파생된 자료구조기 때문이다.<br>Heap은 Max Heap과 Min Heap 두가지가 있는데, Max Heap은 Complete Binary Tree이면서 노드의 값이 자식 노드의 값보다 작지 않은 경우, Min Heap은 그 반대의 경우다.<br>Heap이 Complete Binary Tree를 이용하여 구현된 이유는 삽입과 삭제의 속도 때문인데, 앞서 설명 한 Complete Binary Tree에서 부모와 자식 노드의 인덱스를 빠르게 찾을 수 있는 특성 때문이다.<br>이 글에서는 Max Heap을 기준으로 설명한다.<br>Heap을 C++의 Class를 사용하여 정의하면 다음과 같다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MaxHeap</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    MaxHeap();</span><br><span class="line">    ~MaxHeap();</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">int</span> x)</span></span>; <span class="comment">//Push the element</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Delete</span><span class="params">()</span></span>; <span class="comment">//Pop the root</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">Top</span><span class="params">()</span></span>; <span class="comment">//Return the root</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">Top</span><span class="params">(<span class="keyword">int</span> n)</span></span>; <span class="comment">//return the n-th rank node</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isEmpty</span><span class="params">()</span></span>; <span class="comment">//Determine the heap is empty or not</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; heap; <span class="comment">//Index 0 is not used</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>애초에 멀티 패러다임 언어이기도 하면서, <code>명시적인 것이 암시적인 것보다 낫다(Explicit is better than implicit)</code>고 하지만 동적 타입이기 때문에 타입 선언부터 암시적이며 굉장히 유연하다. 마찬가지로, 들여쓰기도 자유도를 제한한다고 하지만 나는 “어차피 들여쓰기는 맞춰서 하는건데 무려 괄호를 안써도 된다고?” 라고 생각했다.. 이렇게 자유도를 주었으면서, 하나의 답으로 수렴하게 되는 언어라니.. 이해가 어려웠다. 그렇지만 그 정도로 자유도가 높은 언어기 때문에 컨벤션을 중시하는 거지 싶기도 했다. 어찌되었든 언어의 자유도가 높을수록 오류가 높아질 확률도 높아질테니 말이다. 파이썬은 실행가능한 의사코드(Executable Pseudocode)라고 불릴 정도로 자연어와 유사한 high-level 언어이며, <code>파이썬스럽다(Pythonic)</code>는 말까지 나올정도로 독자적이다. 사람이 쓰기 쉽도록 만든 언어이므로 사람이 읽기 편하게 하는데 가장 중점을 두며, 유연한만큼 제약이 많이 두고 있다고 생각한다.</p>
+<p>역시 파이썬은 아직 어렵다. <span class="github-emoji" alias="joy" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">&#x1f602;</span></p>
+<br>
+<center>
+<img src="https://imgs.xkcd.com/comics/python.png" width="50%">
+<font size="2" color="gray"> xkcd - Python!<font>
+</font></font></center>
+<br>
 
-<p>Heap의 삽입 연산의 경우 Complete Binary Tree의 특성에 따라 처음에는 Leaf 노드의 빈 곳 중 가장 왼쪽에 새로운 노드를 추가한다.<br>그 후, 삽입된 노드와 그 노드의 부모와 비교 연산을 수행하고 삽입된 노드의 값이 가장 크면 부모 노드와 자리를 바꾼다.<br>그리고 옮겨진 상태에서 다시 부모와 비교, Swap을 수행하며, 부모보다 값이 크지 않다면 삽입연산이 종료된다.<br>그렇지 않을 경우 계속된 과정 끝에 삽입된 노드가 루트가 되며 삽입연산이 종료된다.<br>이 과정을 <code>Bubble up</code>(거품이 올라가는 모양과 유사하여)이라 칭한다.<br>삽입 연산을 도식화 한 경우는 다음과 같다.</p>
-<p><img src="/images/about-heap/insert1.jpg" alt="INSERT1"><br><img src="/images/about-heap/insert2.jpg" alt="INSERT2"><br><img src="/images/about-heap/insert3.jpg" alt="INSERT3"><br><img src="/images/about-heap/insert4.jpg" alt="INSERT4"></p>
-<p>삽입 연산을 구현한 코드는 다음과 같다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MaxHeap::Insert</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(isEmpty())</span><br><span class="line">        heap.push_back(x);</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        heap.push_back(x);</span><br><span class="line">        <span class="keyword">int</span> i = heap.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i != <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(heap.at(i) &gt; heap.at(i / <span class="number">2</span>))</span><br><span class="line">                swap(heap.at(i), heap.at(i / <span class="number">2</span>));</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            i /= <span class="number">2</span>;</span><br><span class="line">        &#125; <span class="comment">//bubble up</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>나는 기본적으로 어떤 언어든 본질은 같기 때문에 머리에 로직만 담고 있으면, 금방 사용할 수 있다는 생각을 하고 있었다. 이 생각이 바뀐 것은 아니지만 최근에는 여기에 +$\alpha$로 언어의 철학을 이해하려는 노력이 필요하다는 생각을 하게 되었다. 클린 코드를 지향한다고 항상 말하지만 클린 코드가 정확히 무엇인지 깊게 고민한 적은 없었던 듯 싶다. 클린 코드를 위한 방법은 여러가지가 있겠으나, 언어의 철학은 언어를 만든 원리와도 같으며, 이를 이해하는 것이 그 첫걸음이라 생각하며 포스트를 작성한다. 파이썬이 왜 Garbage Collection과 Reference Count를 하는지, 왜 GIL 정책을 사용하는지도 파이썬의 기본 원리를 통해 이해할 수 있으리라 믿는다.<em>(다만, 이번 포스팅에서는 Garbage Collection과 Reference Count에 대해서 깊게 다루지는 않을 듯 하다.)</em></p>
+<h4 id="파이썬에서-멀티-쓰레딩이-사실-싱글-쓰레딩이라구요"><a href="#파이썬에서-멀티-쓰레딩이-사실-싱글-쓰레딩이라구요" class="headerlink" title="파이썬에서 멀티 쓰레딩이 사실 싱글 쓰레딩이라구요?"></a>파이썬에서 멀티 쓰레딩이 사실 싱글 쓰레딩이라구요?</h4><p>최근 이런 질문을 받았다. (사실상 이 포스트를 쓰게 된 이유. 많은 도움이 되었습니다..<span class="github-emoji" alias="bow" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f647.png?v8">&#x1f647;</span>)</p>
+<blockquote>
+<p>C: 딥러닝 쪽을 주로 공부하셨으니 파이썬 많이 쓰시죠?<br>나: 음.. 네.<br>C: 그럼 파이썬에서 멀티 쓰레드를 쓸 때, 내부적으로 싱글 쓰레드로 동작하는 것 알고 계신가요?<br>나: 아.. 들어본 것도 같긴 한데.. 그런..가요..?</p>
+</blockquote>
+<p>많이 부끄러웠다. 당황해서 이후 멀티 쓰레드와 멀티 프로세스에 대한 대화에서 반대로 말하기도 했다. 이후 이에 대해 찾아보면서 파이썬에서 <code>GIL(Global Interpreter Lock)</code>을 사용한다는 것을 알게되었다. 그럼 차근히 프로그램부터 프로세스와 쓰레드의 개념부터 내가 이해하는 언어로 다시 정리해보자.</p>
+<blockquote>
+<p><strong>프로그램(Program)</strong><br><code>실행 가능한 파일(Executable File in File System)</code>, 메모리에 할당되지 않은 정적 상태</p>
+<p><strong>프로세스(Process)</strong><br><code>실행 중인 프로그램(Executing Program)</code>, 프로그램의 인스턴스(Instance of Program), 프로세스가 생성되면서 운영체제로부터 자원을 할당받음, 할당된 범위를 벗어날 수 없음</p>
+<p><strong>쓰레드(Thread)</strong><br>프로세스 안에서 실질적으로 <code>작업을 수행하는 여러 흐름</code>, 독립적으로 스케쥴링 할 수 있는 <code>최소 단위(The Smallest Sequence)</code>, 1개의 프로세스에는 1개 이상의 쓰레드가 존재, 프로세스 내의 쓰레드는 서로 메모리를 공유(Shared Memory)</p>
+</blockquote>
+<p>각 개념은 기본적으로 위와 같으며, 결국 쓰레드는 할당받은 메모리의 범위를 벗어날 수 없는 프로세스의 한계를 보완하기 위해 사용되는 개념이다. 일반적으로 각 프로세스에는 <strong>Code, Data, Heap, Stack</strong>의 형식의 메모리 영역이 할당되며, 쓰레드는 별도의 <strong>Stack</strong>을 다시 할당받게 되고, <strong>Code, Data, Heap</strong>을 <strong>Shared Memory</strong>로 사용하게 된다. 이렇게 쓰레드를 하나의 프로세스 안에서 두 개 이상 사용하면 <code>동시성(Concurrency)</code> 프로그래밍을 할 수 있어 더 빠른 속도로 작업을 처리할 수 있게 된다.<em>(Concurrency와 Parallelism의 차이도 나중에 포스팅을 해보자.)</em></p>
+<p>그러나, 메모리를 공유한다는 것(프로세스든 쓰레드든)은 양날의 검이다. 정말 개쩌는 코드를 정확하게 작성해서 사용하면 되겠지 싶지만, 혼자 사용할 코드가 아니라면 아무리 날고 기어도 항상 문제가 발생하기 마련이다. 여기서 학부시절 운영체제 강의를 들으며 교수님께서 그렇게 강조하셨던 공유 자원에 접근하는 코드(임계 영역, Critical Section)에 여러 쓰레드가 동시에 진입하게 되는 경쟁 상태(Race Condition)라는 문제가 나온다. Race Condition이 발생하면 데이터가 불일치되는 문제로 이어지기 때문에 <strong>동기화(Synchronization)</strong> 과정을 통해 Race Condition을 방지해야만 한다. 동기화하기 위한 대표적인 조건이 Critical Section에 하나의 쓰레드만 진입할 수 있도록 하는 <code>상호 배제(Mutual Exclusion, Mutex)</code>이며, 이에 대한 방법 중 하나가 <code>Lock</code>이다.</p>
+<br>
+<center>
+<img src="https://i.pinimg.com/564x/cf/3d/9a/cf3d9a67a7cb5781a15693e24bf92227.jpg" width="50%">
+<font size="2" color="gray"> 가망이 없어..<font>
+</font></font></center>
+<br>
 
-<p>삭제 연산의 경우는 별도의 인덱스를 지정하는 것이 아니라, 루트 노드에 대한 연산이다.<br>루트 노드를 Pop한 후에, 가장 마지막 노드를 루트로 올린다.<br>그리고 자신과 두 자식(혹은 한 자식)과 비교연산을 수행한 후 가장 큰 노드를 해당 노드와 Swap한다.<br>그 후, 삽입 연산과 마찬가지로 모두 적절한 자리에 놓일 때까지 반복작업을 수행한다.<br>이 과정을 <code>Trickle Down</code>(물방울이 떨어지는 모양과 유사하여)이라 칭한다.<br>삭제 연산을 도식화 한 경우는 다음과 같다.</p>
-<p><img src="/images/about-heap/insert4.jpg" alt="INSERT4"><br><img src="/images/about-heap/delete1.jpg" alt="DELETE1"><br><img src="/images/about-heap/delete2.jpg" alt="DELETE2"><br><img src="/images/about-heap/delete3.jpg" alt="DELETE3"><br><img src="/images/about-heap/delete4.jpg" alt="DELETE4"></p>
-<p>삭제 연산을 구현한 코드는 다음과 같다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MaxHeap::Delete</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(isEmpty())</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">"error"</span>;</span><br><span class="line"></span><br><span class="line">    heap.at(<span class="number">1</span>) = heap.at(heap.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">    heap.pop_back();</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> last_idx = heap.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> max_child_idx;</span><br><span class="line">    <span class="keyword">while</span>(i * <span class="number">2</span> &lt;= last_idx)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i * <span class="number">2</span> + <span class="number">1</span> &gt; last_idx) <span class="comment">//if child of i is only left side</span></span><br><span class="line">            max_child_idx = i * <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(heap.at(i * <span class="number">2</span>) &gt; heap.at(i * <span class="number">2</span> + <span class="number">1</span>)) <span class="comment">//compare left-child to right-child  before child to parent</span></span><br><span class="line">                max_child_idx = i * <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                max_child_idx = i * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(heap.at(i) &lt; heap.at(max_child_idx)) <span class="comment">//compare child to parent</span></span><br><span class="line">            swap(heap.at(i), heap.at(max_child_idx));</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        i = max_child_idx;</span><br><span class="line">    &#125; <span class="comment">//trickle down</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>파이썬에서도 동일하게 이 논리가 적용된다. 파이썬으로 공유 메모리에 접근할 때도 동기화 과정이 필요하므로 Mutex를 활용하게 된다. 다만, 파이썬에서는 그 활용 방식이 조금 독특할 뿐이다. 모든 객체에 대한 Mutex를 두어 Thread-safe하게 만들려면 너무 복잡하고 쓰레드 간 자원을 요구하는 상태가 엉켜 <strong>교착 상태(Deadlock)</strong>가 발생할 수도 있다. <code>그래서 파이썬에서는 그냥 다 잠궜단다..</code> </p>
+<br>
+<center>
+<img src="https://preview.redd.it/r2zt0z71yfu31.png?width=640&crop=smart&auto=webp&s=446a79718041098ad4031d8981f0e7e093e5b595" width="50%">
+<font size="2" color="gray"> 어.....<font>
+</font></font></center>
+<br>
 
-<p>삽입과 삭제는 트리의 높이만큼의 시간의 소요되므로 이는 $O(\log_{2}n) $이다.<br>Heap에 가장 중요한 연산은 삽입과 삭제 두가지이나, 추가적으로 n번째로 큰 수를 리턴해주는 Ranking Search가 가능하며, 이 경우 Heap을 이용한 정렬인 Heap Sort가 사용된다.<br>Heap Sort는 힙이 비게 될 때까지, Top 연산(트리의 루트노드를 리턴)과 삭제 연산을 계속해서 수행하면서 Top 연산에서 리턴받은 값들을 차례로 새로운 배열에 저장하면 정렬이 되는 방식이다.<br>Heap Sort를 수행한 후 완성된 배열의 n번째 인덱스가 곧 힙에서 n번째로 큰 수를 의미한다.</p>
-<p>Ranking Search에 대한 코드는 다음과 같다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//using heapsort</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxHeap::Top</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(heap.<span class="built_in">size</span>() - <span class="number">1</span> &lt; n)</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">"error"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; backup = heap;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; sorted_heap;</span><br><span class="line">    sorted_heap.push_back(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> top;</span><br><span class="line">    <span class="keyword">while</span>(!isEmpty())&#123;</span><br><span class="line">        top = Top();</span><br><span class="line">        Delete();</span><br><span class="line">        sorted_heap.push_back(top);</span><br><span class="line">    &#125;</span><br><span class="line">    heap.swap(backup);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sorted_heap.at(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>사실 위에 while문을 n번만큼만 돌아도 Ranking Search가 가능하지만, Heap Sort의 설명을 곁들이기 위해서 모든 노드를 비웠다.<br>Heap Sort의 경우에는 $O(n\log_{2}n)$의 수행시간을 보인다.</p>
-
+<p>아무튼 그렇게 등장한 것이 바로 GIL이고, 이것이 파이썬 인터프리터에서 한 번에 한 쓰레드에서만 파이썬 바이트코드를 실행하도록 하는 장본인이다. 이로 인해, 아무리 멀티 쓰레딩을 사용한들 실질적으로는 하나의 쓰레드만 모든 자원을 점유하고 다른 쓰레드는 자원이 없으므로 실행할 수 없게 된다. 흔히 “파이썬은 사용은 쉬운데 성능이 좀..”이라고 하는데는 다양한 이유가 있지만 GIL은 아마 그 지분 중 한 축을 당당하게 차지하고 있을 것이다. 그렇지만, GIL을 사용한데도 다 이유가 있을터.. 다시 파이썬이 GIL을 사용하게 된 경위를 들여다보자. <del>(<span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJ0aW1hLmNvbS93ZWJsb2dzL3ZpZXdwb3N0LmpzcD90aHJlYWQ9MjE0MjM1">???: 그럼 느그들이 함 해봐.<i class="fa fa-external-link-alt"></i></span>)</del></p>
+<h4 id="파이썬은-왜-사서-성능을-낮추었는가"><a href="#파이썬은-왜-사서-성능을-낮추었는가" class="headerlink" title="파이썬은 왜 사서 성능을 낮추었는가"></a>파이썬은 왜 사서 성능을 낮추었는가</h4><br>
+<center>
+<img src="https://cds.cern.ch/record/2721971/files/Tobecontinued_2_image.jpg?subformat=icon" width="50%">
+<font size="2" color="gray"> 업데이트 예정<font>
+</font></font></center>
+<br>
     </div>
 
     
@@ -337,7 +347,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://jimheo.github.io/2018/10/12/about-heap/" title="자료구조, 힙(Heap)">https://jimheo.github.io/2018/10/12/about-heap/</a>
+    <a href="https://jimheo.github.io/2021/07/06/global-interpreter-lock/" title="Python GIL(Global Interpreter Lock)이 뭐에요?">https://jimheo.github.io/2021/07/06/global-interpreter-lock/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL3B1YmxpY2RvbWFpbi96ZXJvLzEuMC8="><i class="fab fa-fw fa-creative-commons"></i>ZERO</span> unless stating additionally.
@@ -348,9 +358,10 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
-              <a href="/tags/Heap/" rel="tag"># Heap</a>
-              <a href="/tags/Tree/" rel="tag"># Tree</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/GIL/" rel="tag"># GIL</a>
+              <a href="/tags/Mutex/" rel="tag"># Mutex</a>
+              <a href="/tags/Threading/" rel="tag"># Threading</a>
           </div>
 
         
@@ -381,13 +392,10 @@ s.setAttribute('data-timestamp', +new Date());
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2018/10/12/concept-of-data-structure/" rel="prev" title="Concept of Data Structure">
-      <i class="fa fa-chevron-left"></i> Concept of Data Structure
+    <a href="/2020/07/14/retrospective-to-overcome-the-burnout/" rel="prev" title="번아웃 극복을 위한 복기">
+      <i class="fa fa-chevron-left"></i> 번아웃 극복을 위한 복기
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/03/12/segmentation-neuralnet-listup/" rel="next" title="Segmentation Neural Network List Up">
-      Segmentation Neural Network List Up <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -446,7 +454,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Complete-Binary-Tree"><span class="nav-number">1.</span> <span class="nav-text">Complete Binary Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Ref-https-blog-martinwork-co-kr-theory-2018-09-22-what-is-tree-html"><span class="nav-number">1.1.</span> <span class="nav-text">Ref: https:&#x2F;&#x2F;blog.martinwork.co.kr&#x2F;theory&#x2F;2018&#x2F;09&#x2F;22&#x2F;what-is-tree.html</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Heap의-정의와-연산"><span class="nav-number">2.</span> <span class="nav-text">Heap의 정의와 연산</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#들어가며"><span class="nav-number">1.</span> <span class="nav-text">들어가며</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#파이썬에서-멀티-쓰레딩이-사실-싱글-쓰레딩이라구요"><span class="nav-number">2.</span> <span class="nav-text">파이썬에서 멀티 쓰레딩이 사실 싱글 쓰레딩이라구요?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#파이썬은-왜-사서-성능을-낮추었는가"><span class="nav-number">3.</span> <span class="nav-text">파이썬은 왜 사서 성능을 낮추었는가</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -778,9 +786,9 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://jimheo.github.io/2018/10/12/about-heap/";
-    this.page.identifier = "2018/10/12/about-heap/";
-    this.page.title = "자료구조, 힙(Heap)";
+    this.page.url = "https://jimheo.github.io/2021/07/06/global-interpreter-lock/";
+    this.page.identifier = "2021/07/06/global-interpreter-lock/";
+    this.page.title = "Python GIL(Global Interpreter Lock)이 뭐에요?";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
@@ -810,9 +818,9 @@ if (document.querySelectorAll('pre.mermaid').length) {
         d.documentElement.classList.toggle('darkScheme');
 
         var disqus_config = function() {
-          this.page.url = "https://jimheo.github.io/2018/10/12/about-heap/";
-          this.page.identifier = "2018/10/12/about-heap/";
-          this.page.title = "자료구조, 힙(Heap)";
+          this.page.url = "https://jimheo.github.io/2021/07/06/global-interpreter-lock/";
+          this.page.identifier = "2021/07/06/global-interpreter-lock/";
+          this.page.title = "Python GIL(Global Interpreter Lock)이 뭐에요?";
           };
         w.DISQUS.reset({
           reload: true,
